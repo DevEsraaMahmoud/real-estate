@@ -244,7 +244,7 @@ export function Navbar() {
           "pt-[max(0.25rem,env(safe-area-inset-top))] sm:pt-0",
         )}
       >
-        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+        <div className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2 md:flex-none">
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button
@@ -366,16 +366,16 @@ export function Navbar() {
 
           <Link
             href="/"
-            className="group flex min-w-0 items-center gap-2 rounded-xl py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="group flex min-w-0 flex-1 items-center gap-2 rounded-xl py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:flex-none"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-emerald-800 text-primary-foreground shadow-lg shadow-amber-900/40 sm:h-9 sm:w-9">
               <Sparkles className="h-4 w-4" />
             </span>
-            <div className="hidden min-w-0 flex-col leading-tight sm:flex">
-              <span className="truncate text-sm font-semibold tracking-tight">
+            <div className="flex min-w-0 flex-col justify-center leading-tight">
+              <span className="truncate text-xs font-semibold tracking-tight text-foreground sm:text-sm">
                 {tn("brand")}
               </span>
-              <span className="truncate text-[11px] text-muted-foreground">
+              <span className="truncate text-[10px] text-muted-foreground sm:text-[11px]">
                 {tn("tagline")}
               </span>
             </div>
