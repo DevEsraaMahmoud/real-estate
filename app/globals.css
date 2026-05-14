@@ -152,10 +152,6 @@
   animation: landing-marquee 36s linear infinite;
 }
 
-[dir="rtl"] .landing-marquee-track {
-  animation-direction: reverse;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .landing-marquee-track {
     animation: none;

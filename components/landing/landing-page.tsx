@@ -93,7 +93,7 @@ export function LandingPage() {
       };
 
   return (
-    <div className="flex flex-col gap-20 pb-24 pt-8 sm:gap-24 sm:pt-12">
+    <div className="flex flex-col gap-10 pb-16 pt-6 sm:gap-14 sm:pb-20 sm:pt-8 md:gap-20 lg:gap-24 lg:pb-24">
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 sm:gap-10 sm:px-6 lg:flex-row lg:items-stretch lg:px-8">
         <div
           className={cn(
@@ -303,9 +303,10 @@ export function LandingPage() {
         </motion.div>
       </section>
 
-      <div className="border-y border-white/10 bg-gradient-to-r from-transparent via-amber-500/5 to-transparent py-3">
-        <div className="overflow-hidden">
-          <div className="landing-marquee-track items-center">
+      <div className="border-y border-white/10 bg-gradient-to-r from-transparent via-amber-500/5 to-transparent py-2 sm:py-2.5">
+        {/* dir=ltr: marquee math uses translate(-50%); page RTL + reverse animation clipped wrong on some mobile browsers */}
+        <div className="w-full overflow-hidden" dir="ltr">
+          <div className="landing-marquee-track min-h-10 items-center">
             <div className="flex gap-8 pe-8">
               {liveChips.map((chip) => (
                 <span
@@ -339,7 +340,7 @@ export function LandingPage() {
           viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           {...statMotion}
-          className="glass-panel flex flex-nowrap items-center justify-between gap-1 overflow-x-auto rounded-2xl border border-white/10 px-2 py-2.5 shadow-sm sm:gap-2 sm:px-4 sm:py-3"
+          className="glass-panel flex flex-nowrap items-center justify-between gap-1 overflow-x-auto rounded-2xl border border-white/10 px-2 py-2 shadow-sm sm:gap-2 sm:px-4 sm:py-3"
         >
           {(
             [
@@ -404,7 +405,7 @@ export function LandingPage() {
         </motion.div>
       </MotionSection>
 
-      <MotionSection className="mx-auto w-full max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
+      <MotionSection className="mx-auto w-full max-w-6xl space-y-4 px-4 sm:space-y-6 sm:px-6 md:space-y-8 lg:px-8">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}

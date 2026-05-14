@@ -1,5 +1,9 @@
 import type { Property } from "@/types/property";
 
+/** Pexels CDN — curated property / architecture photos for demo */
+const px = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1066&fit=crop`;
+
 /** Egyptian market demo catalog — prices in EGP, areas in m² */
 export const properties: Property[] = [
   {
@@ -23,11 +27,7 @@ export const properties: Property[] = [
     areaSqm: 420,
     type: "villa",
     tags: ["corner", "garden", "roof"],
-    images: [
-      "https://picsum.photos/seed/nile-eg1-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg1-b/1600/1067",
-      "https://picsum.photos/seed/nile-eg1-c/1600/1067",
-    ],
+    images: [px(1396122), px(323780), px(1396132)],
     amenities: [
       { en: "Private garden", ar: "حديقة خاصة" },
       { en: "Garage 2 cars", ar: "جراج سيارتين" },
@@ -62,11 +62,7 @@ export const properties: Property[] = [
     areaSqm: 165,
     type: "apartment",
     tags: ["park-view", "elevator", "security"],
-    images: [
-      "https://picsum.photos/seed/nile-eg2-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg2-b/1600/1067",
-      "https://picsum.photos/seed/nile-eg2-c/1600/1067",
-    ],
+    images: [px(1571460), px(1571468), px(1918291)],
     amenities: [
       { en: "Security 24/7", ar: "أمن ٢٤ ساعة" },
       { en: "Underground parking", ar: "موقف أرضي" },
@@ -101,10 +97,7 @@ export const properties: Property[] = [
     areaSqm: 85,
     type: "shop",
     tags: ["street-front", "high-traffic", "retail"],
-    images: [
-      "https://picsum.photos/seed/nile-eg3-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg3-b/1600/1067",
-    ],
+    images: [px(1051744), px(667838)],
     amenities: [
       { en: "Three-phase power", ar: "كهرباء ثلاثية" },
       { en: "Storage mezzanine", ar: "ميزانين تخزين" },
@@ -141,10 +134,7 @@ export const properties: Property[] = [
     areaSqm: 92,
     type: "office",
     tags: ["b70", "hq-ready", "parking"],
-    images: [
-      "https://picsum.photos/seed/nile-eg4-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg4-b/1600/1067",
-    ],
+    images: [px(3184292), px(3860099)],
     amenities: [
       { en: "Building reception", ar: "استقبال العمارة" },
       { en: "Fiber-ready", ar: "جاهز لفايبر" },
@@ -178,10 +168,7 @@ export const properties: Property[] = [
     areaSqm: 240,
     type: "penthouse",
     tags: ["duplex", "terrace", "quiet"],
-    images: [
-      "https://picsum.photos/seed/nile-eg5-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg5-b/1600/1067",
-    ],
+    images: [px(1643383), px(2219024)],
     amenities: [
       { en: "Terrace", ar: "تراس" },
       { en: "Built-in closets", ar: "دريسنج مدمج" },
@@ -214,10 +201,7 @@ export const properties: Property[] = [
     areaSqm: 110,
     type: "commercial",
     tags: ["medical", "clinic", "shell"],
-    images: [
-      "https://picsum.photos/seed/nile-eg6-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg6-b/1600/1067",
-    ],
+    images: [px(442150), px(3786840)],
     amenities: [
       { en: "Medical waste shaft", ar: "شفت مخلفات طبية" },
       { en: "Backup generator", ar: "مولد احتياطي" },
@@ -250,10 +234,7 @@ export const properties: Property[] = [
     areaSqm: 72,
     type: "shop",
     tags: ["mall", "fnb-ready", "footfall"],
-    images: [
-      "https://picsum.photos/seed/nile-eg7-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg7-b/1600/1067",
-    ],
+    images: [px(264507), px(302820)],
     amenities: [
       { en: "Grease trap provision", ar: "تجهيز شفاط دهون" },
       { en: "Mall HVAC tie-in", ar: "ربط تكييف المول" },
@@ -286,10 +267,7 @@ export const properties: Property[] = [
     areaSqm: 95,
     type: "apartment",
     tags: ["metro-near", "investment"],
-    images: [
-      "https://picsum.photos/seed/nile-eg8-a/1600/1067",
-      "https://picsum.photos/seed/nile-eg8-b/1600/1067",
-    ],
+    images: [px(1571453), px(7031706)],
     amenities: [
       { en: "Elevator", ar: "أسانسير" },
       { en: "Intercom", ar: "إنتركم" },
