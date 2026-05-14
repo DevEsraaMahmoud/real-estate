@@ -1,26 +1,187 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-arabic: var(--font-arabic), "Noto Sans Arabic", ui-sans-serif, system-ui,
+    sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.75rem;
+  --background: #0a0e12;
+  --foreground: #f4f1ea;
+  --muted: #121a22;
+  --muted-foreground: #a8a29e;
+  --card: rgba(18, 26, 34, 0.78);
+  --card-foreground: #f4f1ea;
+  --popover: #0d141c;
+  --popover-foreground: #f4f1ea;
+  --border: rgba(201, 162, 39, 0.12);
+  --input: rgba(148, 163, 184, 0.2);
+  --ring: #d4a853;
+  --primary: #d4a853;
+  --primary-foreground: #1a1206;
+  --secondary: #152028;
+  --secondary-foreground: #e7e5e4;
+  --accent: rgba(212, 168, 83, 0.12);
+  --accent-foreground: #fde68a;
+  --destructive: #f87171;
+  --destructive-foreground: #0b1220;
+}
+
+.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #e2e8f0;
+  --muted-foreground: #475569;
+  --card: rgba(255, 255, 255, 0.86);
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --border: rgba(15, 23, 42, 0.08);
+  --input: rgba(15, 23, 42, 0.12);
+  --ring: #0284c7;
+  --primary: #0284c7;
+  --primary-foreground: #f8fafc;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0f172a;
+  --accent: rgba(2, 132, 199, 0.1);
+  --accent-foreground: #075985;
+  --destructive: #dc2626;
+  --destructive-foreground: #fef2f2;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  [dir="rtl"] body {
+    letter-spacing: 0;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility glass-panel {
+  @apply border border-white/10 bg-white/5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-xl;
+}
+
+.light .glass-panel {
+  @apply border border-black/5 bg-white/70 shadow-[0_0_0_1px_rgba(15,23,42,0.04)_inset];
+}
+
+@utility text-gradient {
+  @apply bg-gradient-to-r from-amber-100 via-yellow-100 to-emerald-100 bg-clip-text text-transparent;
+}
+
+@utility mesh-bg {
+  background-image: radial-gradient(
+      1000px circle at 15% 15%,
+      rgba(212, 168, 83, 0.14),
+      transparent 42%
+    ),
+    radial-gradient(
+      900px circle at 88% 12%,
+      rgba(16, 185, 129, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      800px circle at 50% 92%,
+      rgba(120, 113, 108, 0.1),
+      transparent 45%
+    );
+}
+
+.font-arabic {
+  font-family: var(--font-arabic), "Noto Sans Arabic", system-ui, sans-serif;
+}
+
+@keyframes landing-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.landing-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  animation: landing-marquee 36s linear infinite;
+}
+
+[dir="rtl"] .landing-marquee-track {
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes hero-border-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(212, 168, 83, 0.2),
+      0 0 40px -12px rgba(212, 168, 83, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(52, 211, 153, 0.25),
+      0 0 52px -8px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.hero-live-glow {
+  animation: hero-border-glow 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-live-glow {
+    animation: none;
+  }
 }
