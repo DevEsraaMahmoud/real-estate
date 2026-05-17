@@ -1,8 +1,6 @@
-﻿# Real Estate · مفاتيح النيل للعقارات
+﻿# Nile Key Realty
 
-منصة عقارية تجريبية متعددة اللغات (عربي / إنجليزي) مبنية بـ **Next.js 16** — تعرض وحدات للبيع والإيجار في مصر مع قوائم، مقارنة، مفضلة، تحليلات، ولوحة إدارة.
-
-A multilingual **Next.js** showcase for Egyptian real estate: listings, property details, compare, saved favorites, analytics, and admin — with **Arabic (RTL)** and **English** support.
+A multilingual **Next.js 16** real-estate showcase for Egyptian properties (sale and rent). Browse listings, compare units, save favorites, view analytics, and explore a demo admin dashboard — with full **Arabic (RTL)** and **English** support via [next-intl](https://next-intl-docs.vercel.app/).
 
 ## Status
 
@@ -12,21 +10,21 @@ A multilingual **Next.js** showcase for Egyptian real estate: listings, property
 
 ## Features
 
-- 🌐 ثنائي اللغة: `ar` (افتراضي) و `en` عبر [next-intl](https://next-intl-docs.vercel.app/)
-- 🏠 قوائم عقارات مع فلاتر وبحث
-- 📊 صفحة تحليلات (Recharts)
-- ⚖️ مقارنة حتى 3 وحدات
-- ❤️ مفضلة وحدات مؤخراً (localStorage)
-- 🛠️ لوحة إدارة تجريبية
-- ✅ CI: اختبارات، تنسيق، وتحليل ثابت
+- Bilingual routing: `ar` (default) and `en`
+- Property listings with filters and search
+- Analytics dashboard (Recharts)
+- Side-by-side compare (up to 3 properties)
+- Favorites and recently viewed (localStorage)
+- Demo admin dashboard
+- CI: tests, formatting, and static analysis
 
 ---
 
-## Architecture · هيكل التطبيق
+## Architecture
 
 ```mermaid
 flowchart TB
-  subgraph Client["المتصفح / Browser"]
+  subgraph Client["Browser"]
     UI["React Pages & Components"]
     Bag["PropertyBag Context"]
     LS[("localStorage")]
@@ -41,7 +39,7 @@ flowchart TB
     MW --> Layout --> Pages
   end
 
-  subgraph Data["البيانات / Data"]
+  subgraph Data["Data Layer"]
     Props["data/properties.ts"]
     Msg["messages/ar.json · en.json"]
   end
@@ -54,7 +52,7 @@ flowchart TB
 
 ---
 
-## Routing · المسارات
+## Routing
 
 ```mermaid
 flowchart LR
@@ -89,7 +87,7 @@ flowchart LR
 
 ---
 
-## User flows · تدفقات المستخدم
+## User flows
 
 ```mermaid
 sequenceDiagram
@@ -99,8 +97,8 @@ sequenceDiagram
   participant B as PropertyBag
   participant S as Saved / Compare
 
-  U->>L: Browse & filter properties
-  L->>D: Open property slug
+  U->>L: Browse and filter properties
+  L->>D: Open property by slug
   D->>B: addRecent(slug)
   U->>D: Toggle favorite
   D->>B: toggleFavorite → localStorage
@@ -112,7 +110,7 @@ sequenceDiagram
 
 ---
 
-## Project structure · هيكل المجلدات
+## Project structure
 
 ```mermaid
 graph TD
@@ -221,4 +219,4 @@ Deploy on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=nex
 
 ## License
 
-Private demo project — adjust license as needed for open source release.
+Private demo project — adjust the license as needed for open source release.
