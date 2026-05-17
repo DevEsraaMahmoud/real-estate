@@ -17,7 +17,10 @@ export function ContactForm() {
   const locale = useLocale() as "en" | "ar";
   const search = useSearchParams();
   const slug = search.get("property");
-  const preset = useMemo(() => (slug ? getPropertyBySlug(slug) : undefined), [slug]);
+  const preset = useMemo(
+    () => (slug ? getPropertyBySlug(slug) : undefined),
+    [slug],
+  );
   const [pending, setPending] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {

@@ -11,7 +11,9 @@ export async function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-3">
-            <p className="text-sm font-semibold tracking-tight">{tn("brand")}</p>
+            <p className="text-sm font-semibold tracking-tight">
+              {tn("brand")}
+            </p>
             <p className="text-sm text-muted-foreground">
               {t("rights", { year })}
             </p>

@@ -41,14 +41,10 @@ export function ListingsView() {
   const filtered = useMemo(() => {
     let list = [...properties];
 
-    list = list.filter(
-      (p) => p.price >= price[0] && p.price <= price[1],
-    );
+    list = list.filter((p) => p.price >= price[0] && p.price <= price[1]);
 
     if (city !== "all") {
-      list = list.filter(
-        (p) => p.city.en.toLowerCase() === city.toLowerCase(),
-      );
+      list = list.filter((p) => p.city.en.toLowerCase() === city.toLowerCase());
     }
 
     if (type !== "all") {
@@ -89,7 +85,9 @@ export function ListingsView() {
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:px-8">
       <aside className="glass-panel h-fit w-full shrink-0 rounded-2xl p-5 lg:sticky lg:top-24 lg:max-w-xs">
         <div className="flex items-center justify-between gap-2">
-          <h2 className="text-sm font-semibold tracking-tight">{tc("filters")}</h2>
+          <h2 className="text-sm font-semibold tracking-tight">
+            {tc("filters")}
+          </h2>
           <Button
             variant="ghost"
             size="sm"
@@ -163,7 +161,9 @@ export function ListingsView() {
                 <SelectItem value="penthouse">{t("typePenthouse")}</SelectItem>
                 <SelectItem value="shop">{t("typeShop")}</SelectItem>
                 <SelectItem value="office">{t("typeOffice")}</SelectItem>
-                <SelectItem value="commercial">{t("typeCommercial")}</SelectItem>
+                <SelectItem value="commercial">
+                  {t("typeCommercial")}
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -252,9 +252,7 @@ export function ListingsView() {
           <div
             className={cn(
               "grid gap-6",
-              layout === "grid"
-                ? "md:grid-cols-2"
-                : "grid-cols-1",
+              layout === "grid" ? "md:grid-cols-2" : "grid-cols-1",
             )}
           >
             {current.map((p: Property) => (

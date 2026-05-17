@@ -26,8 +26,6 @@ export function AnimatedCounter({
   }, [duration, value]);
 
   return (
-    <span>
-      {display.toLocaleString(locale === "ar" ? "ar-EG" : "en-EG")}
-    </span>
+    <span>{display.toLocaleString(locale === "ar" ? "ar-EG" : "en-EG")}</span>
   );
 }

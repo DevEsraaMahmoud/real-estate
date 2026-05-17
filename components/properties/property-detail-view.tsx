@@ -52,10 +52,7 @@ export function PropertyDetailView({ property }: PropertyDetailViewProps) {
   const similar = useMemo(
     () =>
       properties
-        .filter(
-          (p) =>
-            p.id !== property.id && p.city.en === property.city.en,
-        )
+        .filter((p) => p.id !== property.id && p.city.en === property.city.en)
         .slice(0, 3),
     [property],
   );
@@ -79,7 +76,9 @@ export function PropertyDetailView({ property }: PropertyDetailViewProps) {
         <div>
           <div className="flex flex-wrap gap-2">
             <Badge>{typeLabel}</Badge>
-            {property.featured ? <Badge variant="default">{tc("featured")}</Badge> : null}
+            {property.featured ? (
+              <Badge variant="default">{tc("featured")}</Badge>
+            ) : null}
             <Badge variant="outline" className="gap-1">
               <ShieldCheck className="h-3 w-3" />
               {tc("verified")}
@@ -110,7 +109,9 @@ export function PropertyDetailView({ property }: PropertyDetailViewProps) {
               <Link href="/compare">{tc("compare")}</Link>
             </Button>
           </div>
-          <p className="mt-2 max-w-xs text-xs text-muted-foreground">{t("compareHint")}</p>
+          <p className="mt-2 max-w-xs text-xs text-muted-foreground">
+            {t("compareHint")}
+          </p>
         </div>
       </div>
 
@@ -195,7 +196,11 @@ export function PropertyDetailView({ property }: PropertyDetailViewProps) {
               <div className="flex justify-between gap-2">
                 <span>{t("hoa")}</span>
                 <span className="text-foreground">
-                  {formatCurrency(property.hoaMonthly, locale, property.currency)}
+                  {formatCurrency(
+                    property.hoaMonthly,
+                    locale,
+                    property.currency,
+                  )}
                 </span>
               </div>
               <div className="flex justify-between gap-2">
@@ -301,7 +306,9 @@ export function PropertyDetailView({ property }: PropertyDetailViewProps) {
             </div>
             <Separator />
             <div className="flex items-baseline justify-between gap-2">
-              <p className="text-sm text-muted-foreground">{t("mortgageMonthly")}</p>
+              <p className="text-sm text-muted-foreground">
+                {t("mortgageMonthly")}
+              </p>
               <p className="text-2xl font-semibold tracking-tight">
                 {formatCurrency(Math.round(monthly), locale, property.currency)}
               </p>
@@ -326,7 +333,9 @@ export function PropertyDetailView({ property }: PropertyDetailViewProps) {
 
       <section className="space-y-4">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-semibold tracking-tight">{t("similar")}</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">
+            {t("similar")}
+          </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {similar.map((p) => (

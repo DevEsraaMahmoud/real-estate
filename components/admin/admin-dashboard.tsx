@@ -48,7 +48,10 @@ export function AdminDashboard() {
 
   const stats = useMemo(
     () => [
-      { label: t("statRevenue"), value: formatCurrency(4_820_000, locale, "EGP") },
+      {
+        label: t("statRevenue"),
+        value: formatCurrency(4_820_000, locale, "EGP"),
+      },
       { label: t("statListings"), value: "128" },
       { label: t("statPending"), value: "14" },
       { label: t("statLeads"), value: "326" },
@@ -154,7 +157,9 @@ export function AdminDashboard() {
                             onClick={() =>
                               setRows((prev) =>
                                 prev.map((r) =>
-                                  r.id === row.id ? { ...r, status: "live" } : r,
+                                  r.id === row.id
+                                    ? { ...r, status: "live" }
+                                    : r,
                                 ),
                               )
                             }
@@ -180,11 +185,15 @@ export function AdminDashboard() {
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <div className="rounded-xl border border-white/5 bg-white/5 p-3">
-                <p className="font-medium text-foreground">Skyline Glass Penthouse</p>
+                <p className="font-medium text-foreground">
+                  Skyline Glass Penthouse
+                </p>
                 <p>Private tour · Next Tuesday</p>
               </div>
               <div className="rounded-xl border border-white/5 bg-white/5 p-3">
-                <p className="font-medium text-foreground">Marina Loft Residence</p>
+                <p className="font-medium text-foreground">
+                  Marina Loft Residence
+                </p>
                 <p>Offer strategy call</p>
               </div>
             </CardContent>

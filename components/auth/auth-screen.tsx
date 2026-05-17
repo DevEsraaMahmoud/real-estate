@@ -26,7 +26,11 @@ export function AuthScreen() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">{t("password")}</Label>
-            <Input id="password" type="password" autoComplete="current-password" />
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+            />
           </div>
           <Button className="w-full" type="button">
             {t("continue")}
@@ -47,7 +51,10 @@ export function AuthScreen() {
           </div>
           <p className="text-center text-xs text-muted-foreground">
             {t("signupPrompt")}{" "}
-            <button type="button" className="text-primary underline-offset-4 hover:underline">
+            <button
+              type="button"
+              className="text-primary underline-offset-4 hover:underline"
+            >
               {t("signupLink")}
             </button>
           </p>

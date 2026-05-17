@@ -37,9 +37,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   const url = `${base}/${locale}`;

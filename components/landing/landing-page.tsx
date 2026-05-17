@@ -11,11 +11,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
-import {
-  motion,
-  useReducedMotion,
-  type Variants,
-} from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { AnimatedCounter } from "@/components/motion/animated-counter";
 import { MotionSection } from "@/components/motion/motion-section";
@@ -62,17 +58,16 @@ export function LandingPage() {
   const [type, setType] = useState("apartment");
 
   const liveChips = useMemo(
-    () =>
-      [
-        t("live1"),
-        t("live2"),
-        t("live3"),
-        t("live4"),
-        t("live5"),
-        t("live6"),
-        t("live7"),
-        t("live8"),
-      ],
+    () => [
+      t("live1"),
+      t("live2"),
+      t("live3"),
+      t("live4"),
+      t("live5"),
+      t("live6"),
+      t("live7"),
+      t("live8"),
+    ],
     [t],
   );
 
@@ -110,7 +105,11 @@ export function LandingPage() {
                   scale: [1, 1.12, 1],
                   opacity: [0.35, 0.55, 0.35],
                 }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
               <motion.div
                 aria-hidden
@@ -130,7 +129,11 @@ export function LandingPage() {
                 aria-hidden
                 className="pointer-events-none absolute end-1/4 top-1/3 h-40 w-40 rounded-full bg-yellow-200/10 blur-2xl"
                 animate={{ y: [0, -12, 0], x: [0, 8, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
             </>
           ) : (
@@ -445,7 +448,9 @@ export function LandingPage() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/15 to-transparent"
-            animate={reduceMotion ? { opacity: 0.25 } : { opacity: [0.15, 0.35, 0.15] }}
+            animate={
+              reduceMotion ? { opacity: 0.25 } : { opacity: [0.15, 0.35, 0.15] }
+            }
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
           <div className="relative flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

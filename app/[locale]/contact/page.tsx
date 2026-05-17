@@ -12,7 +12,9 @@ export default async function ContactPage({ params }: Props) {
   return (
     <div className="py-10">
       <Suspense
-        fallback={<Skeleton className="mx-auto h-[520px] max-w-xl rounded-2xl" />}
+        fallback={
+          <Skeleton className="mx-auto h-[520px] max-w-xl rounded-2xl" />
+        }
       >
         <ContactForm />
       </Suspense>

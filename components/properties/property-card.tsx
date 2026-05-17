@@ -48,7 +48,10 @@ export function PropertyCard({ property, layout = "grid" }: PropertyCardProps) {
       layout
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 320, damping: 26 }}
-      className={cn("flex h-full min-h-0 flex-col", layout === "list" && "w-full")}
+      className={cn(
+        "flex h-full min-h-0 flex-col",
+        layout === "list" && "w-full",
+      )}
     >
       <Card
         className={cn(
@@ -89,7 +92,10 @@ export function PropertyCard({ property, layout = "grid" }: PropertyCardProps) {
               aria-label={favorited ? t("saved") : t("save")}
             >
               <Heart
-                className={cn("h-4 w-4", favorited && "fill-rose-400 text-rose-400")}
+                className={cn(
+                  "h-4 w-4",
+                  favorited && "fill-rose-400 text-rose-400",
+                )}
               />
             </Button>
             <Button
@@ -140,7 +146,9 @@ export function PropertyCard({ property, layout = "grid" }: PropertyCardProps) {
               </span>
               <span aria-hidden>·</span>
               <span>
-                {property.areaSqm.toLocaleString(locale === "ar" ? "ar-EG" : "en-EG")}{" "}
+                {property.areaSqm.toLocaleString(
+                  locale === "ar" ? "ar-EG" : "en-EG",
+                )}{" "}
                 {t("sqm")}
               </span>
             </div>
@@ -157,10 +165,14 @@ export function PropertyCard({ property, layout = "grid" }: PropertyCardProps) {
           </CardContent>
           <CardFooter className="mt-auto justify-between gap-3 pb-6">
             <Button variant="ghost" asChild>
-              <Link href={`/properties/${property.slug}`}>{t("viewDetails")}</Link>
+              <Link href={`/properties/${property.slug}`}>
+                {t("viewDetails")}
+              </Link>
             </Button>
             <Button asChild>
-              <Link href={`/contact?property=${property.slug}`}>{t("contact")}</Link>
+              <Link href={`/contact?property=${property.slug}`}>
+                {t("contact")}
+              </Link>
             </Button>
           </CardFooter>
         </div>

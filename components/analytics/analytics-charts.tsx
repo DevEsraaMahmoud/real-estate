@@ -77,7 +77,10 @@ export function AnalyticsCharts() {
                   <stop offset="95%" stopColor="#38bdf8" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(148,163,184,0.15)" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="rgba(148,163,184,0.15)"
+              />
               <XAxis dataKey="month" stroke="#94a3b8" fontSize={12} />
               <YAxis stroke="#94a3b8" fontSize={12} />
               <Tooltip
@@ -115,7 +118,10 @@ export function AnalyticsCharts() {
         <CardContent className="h-72 min-w-0">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={views}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(148,163,184,0.15)" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="rgba(148,163,184,0.15)"
+              />
               <XAxis dataKey="name" stroke="#94a3b8" fontSize={12} />
               <YAxis stroke="#94a3b8" fontSize={12} />
               <Tooltip
@@ -125,7 +131,12 @@ export function AnalyticsCharts() {
                   borderRadius: 12,
                 }}
               />
-              <Bar dataKey="value" fill="#38bdf8" name={t("tooltipViews")} radius={[8, 8, 0, 0]} />
+              <Bar
+                dataKey="value"
+                fill="#38bdf8"
+                name={t("tooltipViews")}
+                radius={[8, 8, 0, 0]}
+              />
             </BarChart>
           </ResponsiveContainer>
         </CardContent>
@@ -138,7 +149,10 @@ export function AnalyticsCharts() {
         <CardContent className="h-72 min-w-0">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={activity}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(148,163,184,0.15)" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="rgba(148,163,184,0.15)"
+              />
               <XAxis dataKey="week" stroke="#94a3b8" fontSize={12} />
               <YAxis stroke="#94a3b8" fontSize={12} />
               <Tooltip
@@ -167,7 +181,10 @@ export function AnalyticsCharts() {
         <CardContent className="h-72 min-w-0">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={inquiries}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(148,163,184,0.15)" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="rgba(148,163,184,0.15)"
+              />
               <XAxis dataKey="day" stroke="#94a3b8" fontSize={12} />
               <YAxis stroke="#94a3b8" fontSize={12} />
               <Tooltip
@@ -195,9 +212,18 @@ export function AnalyticsCharts() {
         <CardContent className="h-80 min-w-0">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={funnel} layout="vertical" margin={{ left: 24 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(148,163,184,0.15)" />
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="rgba(148,163,184,0.15)"
+              />
               <XAxis type="number" stroke="#94a3b8" fontSize={12} />
-              <YAxis dataKey="stage" type="category" stroke="#94a3b8" fontSize={12} width={80} />
+              <YAxis
+                dataKey="stage"
+                type="category"
+                stroke="#94a3b8"
+                fontSize={12}
+                width={80}
+              />
               <Tooltip
                 contentStyle={{
                   background: "rgba(15,23,42,0.95)",

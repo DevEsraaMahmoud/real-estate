@@ -46,8 +46,7 @@ const nav = [
   { href: "/contact", labelKey: "contact" as const },
 ];
 
-const iconBtnMobile =
-  "h-11 w-11 shrink-0 touch-manipulation md:h-10 md:w-10";
+const iconBtnMobile = "h-11 w-11 shrink-0 touch-manipulation md:h-10 md:w-10";
 
 function NavbarSearchBlock({
   query,
@@ -167,7 +166,7 @@ function NavbarSearchBlock({
                       </span>
                     </div>
                   </Link>
-                )
+                ),
               )
             )}
           </div>
@@ -264,7 +263,9 @@ export function Navbar() {
               )}
             >
               <SheetHeader className="border-b border-white/10 space-y-1 px-4 pb-4 pt-3 text-start pe-12">
-                <SheetTitle className="text-base font-semibold">{tn("brand")}</SheetTitle>
+                <SheetTitle className="text-base font-semibold">
+                  {tn("brand")}
+                </SheetTitle>
                 <p className="text-xs text-muted-foreground">{tn("tagline")}</p>
               </SheetHeader>
 
@@ -450,19 +451,28 @@ export function Navbar() {
                 <Bell className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[min(100vw-2rem,20rem)]">
+            <DropdownMenuContent
+              align="end"
+              className="w-[min(100vw-2rem,20rem)]"
+            >
               <DropdownMenuLabel>{t("notifications")}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
-                <span className="text-sm font-medium">{tn("notification1")}</span>
+                <span className="text-sm font-medium">
+                  {tn("notification1")}
+                </span>
                 <span className="text-xs text-muted-foreground">2m</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
-                <span className="text-sm font-medium">{tn("notification2")}</span>
+                <span className="text-sm font-medium">
+                  {tn("notification2")}
+                </span>
                 <span className="text-xs text-muted-foreground">1h</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="flex flex-col items-start gap-1 py-3">
-                <span className="text-sm font-medium">{tn("notification3")}</span>
+                <span className="text-sm font-medium">
+                  {tn("notification3")}
+                </span>
                 <span className="text-xs text-muted-foreground">3h</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
@@ -472,7 +482,11 @@ export function Navbar() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="hidden sm:inline-flex">
+              <Button
+                variant="outline"
+                size="sm"
+                className="hidden sm:inline-flex"
+              >
                 {locale === "ar" ? t("arabic") : t("english")}
                 <ChevronDown className="h-4 w-4 opacity-70" />
               </Button>

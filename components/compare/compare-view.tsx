@@ -28,10 +28,10 @@ export function CompareView() {
           apartment: "typeApartment",
           villa: "typeVilla",
           penthouse: "typePenthouse",
-        commercial: "typeCommercial",
-        shop: "typeShop",
-        office: "typeOffice",
-      } as const
+          commercial: "typeCommercial",
+          shop: "typeShop",
+          office: "typeOffice",
+        } as const
       )[p.type],
     );
 
